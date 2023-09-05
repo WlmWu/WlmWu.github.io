@@ -7,6 +7,8 @@ import {
   useCallback,
 } from "react";
 
+import useRWD, { DeviceType } from "../../hooks/useRWD";
+
 import "./ReelSection.css";
 
 const ReelSectionItem = forwardRef((props, ref) => {
@@ -61,9 +63,10 @@ const ReelSection = (props) => {
   const { children } = props;
   const domRef = useRef();
 
-  const nChildren = children.length + 1;
+  const nChildren = children.length;
   const sRefs = useRef([]);
   const [sHeights, setSHeights] = useState([]);
+  const dType = useRWD();
 
   const updateRefs = useCallback(
     (arrLength) => {
@@ -92,14 +95,18 @@ const ReelSection = (props) => {
       current = domRef.current;
     }
 
-    const toScrollTop = () => {
+    const isScrollMargin = (init = false) => {
+      if (!init && dType === DeviceType.PC) return;
       const top = sRefs.current[0].current.clientHeight / 2;
+      const bottom =
+        sRefs.current
+          .map((sRef) => sRef.current.clientHeight)
+          .reduce((s, h) => s + h) -
+        sRefs.current[nChildren - 1].current.clientHeight / 2;
       if (current.scrollTop < top) {
-        current.scroll({
-          top: top,
-          left: 0,
-          behavior: "instant",
-        });
+        current.scrollTop = top;
+      } else if (current.scrollTop > bottom) {
+        current.scrollTop = bottom;
       }
     };
 
@@ -114,9 +121,10 @@ const ReelSection = (props) => {
         }
         setSHeights([...newHeights]);
       }
+      isScrollMargin();
     };
     if (sRefs.current[0].current) {
-      toScrollTop();
+      isScrollMargin(true);
     }
 
     current.addEventListener("scroll", handleScroll, { passive: true });
@@ -126,7 +134,7 @@ const ReelSection = (props) => {
         current.removeEventListener("scroll", handleScroll);
       }
     };
-  }, [updateRefs, sHeights, nChildren]);
+  }, [updateRefs, sHeights, nChildren, dType]);
 
   return (
     <>
