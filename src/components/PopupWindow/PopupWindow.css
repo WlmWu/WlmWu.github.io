@@ -1,0 +1,46 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 9999999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-inner {
+    position: relative;
+    padding: 32px;
+    width: 40%;
+    background-color: white;
+    margin: 70px auto;
+    max-width: 500px;
+}
+
+.popup-inner .btn-close {
+    position: absolute;
+    font-size: 14px;
+    top: 0px;
+    right: 0px;
+    padding: 66px 82px 0px 0px;
+}
+
+.popup-inner h5 {
+    max-width: 80%;
+}
+
+@media (max-width: 767px) {
+    .popup-inner {
+        width: 60%;
+    }
+}
+
+@media (max-width: 580px) {
+    .popup-inner {
+        width: 80%;
+    }
+}

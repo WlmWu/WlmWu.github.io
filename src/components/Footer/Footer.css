@@ -1,0 +1,12 @@
+footer {
+  background: #474559;
+  box-shadow: 0 -1px 0 #474559;
+}
+footer a,
+footer p {
+  /* pointer-events: none; */
+  color: #2d2c2c;
+}
+footer a:hover {
+  color: #5b5b5b !important;
+}

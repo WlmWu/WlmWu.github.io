@@ -1,0 +1,11 @@
+.matlab-icon {
+  stroke: currentColor;
+  fill: currentColor;
+  stroke-width: 0;
+  height: 1em;
+  width: 1em;
+  font-size: 30px;
+  margin-bottom: 4px;
+  vertical-align: middle;
+}
+
