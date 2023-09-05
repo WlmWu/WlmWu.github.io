@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.f5771d35.css",
-    "main.js": "/static/js/main.599c1185.js",
+    "main.js": "/static/js/main.b8fc78a8.js",
     "static/js/787.e3835ec5.chunk.js": "/static/js/787.e3835ec5.chunk.js",
     "static/media/about.svg": "/static/media/about.5995444d2fbc3b2f563783ee8ffbb800.svg",
     "static/media/matlab.svg": "/static/media/matlab.ba173cde29e5c68b8b8a1a394bdadcd3.svg",
     "index.html": "/index.html",
     "main.f5771d35.css.map": "/static/css/main.f5771d35.css.map",
-    "main.599c1185.js.map": "/static/js/main.599c1185.js.map",
+    "main.b8fc78a8.js.map": "/static/js/main.b8fc78a8.js.map",
     "787.e3835ec5.chunk.js.map": "/static/js/787.e3835ec5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f5771d35.css",
-    "static/js/main.599c1185.js"
+    "static/js/main.b8fc78a8.js"
   ]
 }
