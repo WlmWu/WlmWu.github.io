@@ -66,7 +66,7 @@ const MyProjects = (props) => {
         <ProjectSection>
           <p>
             Oops, something is wrong. Please Visit{" "}
-            <a href={props.url}>My Github Repo</a>
+            <a href={props.url}>My Github</a>
           </p>
         </ProjectSection>
       ) : (
