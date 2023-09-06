@@ -1,8 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 const useFetch = (url, method = "GET") => {
   const [data, setData] = useState([]);
-  const mounted = useRef(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -11,13 +10,9 @@ const useFetch = (url, method = "GET") => {
       return json;
     }
 
-    if (!mounted.current) {
-      mounted.current = true;
-    } else {
-      fetchData()
-        .then((json) => setData(json))
-        .catch((e) => console.log(e));
-    }
+    fetchData()
+      .then((json) => setData(json))
+      .catch((e) => console.log(e));
   }, [url, method]);
 
   return data;
